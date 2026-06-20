@@ -1,12 +1,20 @@
 import Link from "next/link";
 
+const STUDY_URL =
+  process.env.NEXT_PUBLIC_STUDY_URL ??
+  "https://shreyankkadadi.com/studio/hanga";
+
 export function PaperTexture() {
   return <div className="paper-texture" aria-hidden="true" />;
 }
 
 export function HankoSeal() {
   return (
-    <Link href="/" className="seal-hover block" aria-label="hanga home">
+    <Link
+      href={STUDY_URL}
+      className="seal-hover block"
+      aria-label="hanga study — shreyank kadadi"
+    >
       <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 44 44" aria-hidden="true">
         <rect
           x="3"
@@ -30,28 +38,10 @@ export function HankoSeal() {
   );
 }
 
-export function SiteNav({ active }: { active?: "home" | "studio" | "study" }) {
-  const item = (href: string, label: string, key: typeof active) => (
-    <Link
-      href={href}
-      className={`font-serif text-lg sm:text-xl whitespace-nowrap transition-colors ${
-        active === key ? "text-ink" : "text-stone hover:text-umber"
-      }`}
-    >
-      {label}
-    </Link>
-  );
-
+export function SiteHeader() {
   return (
-    <header className="mb-10 sm:mb-14 seal-reveal delay-0 flex items-center gap-6">
+    <header className="mb-10 sm:mb-14 seal-reveal delay-0">
       <HankoSeal />
-      <nav className="flex items-center gap-5 sm:gap-8" aria-label="primary">
-        {item("/", "home", "home")}
-        <span className="text-stone">·</span>
-        {item("/studio", "studio", "studio")}
-        <span className="text-stone">·</span>
-        {item("/study", "study", "study")}
-      </nav>
     </header>
   );
 }

@@ -10,13 +10,13 @@ const shipporiMincho = Shippori_Mincho({
 });
 
 export const metadata: Metadata = {
-  title: "hanga — woodblock deconstruction engine",
+  title: "hanga",
   description:
     "a study of hiroshige. deconstruct any image into ukiyo-e blocks, bokashi, and a hanmoto printing plan.",
   openGraph: {
     title: "hanga",
     description:
-      "a woodblock deconstruction engine — keyblock, colour blocks, bokashi, layer by layer.",
+      "woodblock deconstruction — keyblock, colour blocks, bokashi, layer by layer.",
     type: "website",
   },
 };

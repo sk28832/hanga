@@ -1,4 +1,5 @@
 import type { DeconstructPlan, SampleEntry } from "./types";
+import { engineBaseUrl } from "./engine-url";
 
 export async function deconstructImage(
   file: File,
@@ -10,7 +11,10 @@ export async function deconstructImage(
   body.append("n_colors", String(nColors));
   body.append("modern", modern ? "true" : "false");
 
-  const res = await fetch("/api/deconstruct", { method: "POST", body });
+  const engine = engineBaseUrl();
+  const url = engine ? `${engine}/deconstruct` : "/api/deconstruct";
+
+  const res = await fetch(url, { method: "POST", body });
   const data = await res.json();
   if (!res.ok) {
     throw new Error(data.detail ?? "deconstruction failed");

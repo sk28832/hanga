@@ -15,6 +15,14 @@ hanga/
 ## quick start
 
 ```bash
+# one command — starts engine + web together
+chmod +x dev.sh
+./dev.sh
+```
+
+or manually:
+
+```bash
 # terminal 1 — engine
 cd engine
 ./run.sh
@@ -25,8 +33,11 @@ npm install
 npm run dev
 ```
 
-open http://localhost:3000. go to **studio**, upload an image or pick a bundled
-sample.
+open http://localhost:3000. upload an image or pick a bundled sample.
+
+the study — art history and pipeline notes — lives on the portfolio at
+[shreyankkadadi.com/studio/hanga](https://shreyankkadadi.com/studio/hanga).
+the hanko seal links back there.
 
 the frontend proxies uploads to the engine at `http://127.0.0.1:8000`. if the
 engine is not running, bundled sample plans in `web/public/decon/` still work.
@@ -55,8 +66,23 @@ see [engine/README.md](engine/README.md) for the pipeline in detail.
 
 ## deploy
 
-- **web only**: deploy `web/` to vercel; bundled `/decon/` samples demo without python.
-- **full stack**: run the engine on a gpu host; set `HANGA_ENGINE_URL` in the frontend env.
+### engine (railway)
+
+1. create a railway project from this repo; set the service root to `engine/`
+2. enable public networking and copy the https url
+3. railway reads `engine/Procfile` and `engine/railway.toml` automatically
+
+### web (vercel)
+
+1. import this repo on vercel; set **root directory** to `web/`
+2. add custom domain `hanga.shreyankkadadi.com`
+3. set env vars (see `web/.env.example`):
+   - `NEXT_PUBLIC_STUDY_URL` → portfolio study page
+   - `NEXT_PUBLIC_HANGA_ENGINE_URL` → railway public url
+   - `HANGA_ENGINE_URL` → same railway url (server-side fallback)
+
+uploads call the engine directly from the browser in production (avoids vercel
+serverless timeouts). bundled `/decon/` samples work without the engine.
 
 ## design
 

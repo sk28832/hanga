@@ -18,12 +18,10 @@ export async function POST(req: NextRequest) {
     const data = await res.json();
     return NextResponse.json(data, { status: res.status });
   } catch {
-    return NextResponse.json(
-      {
-        detail:
-          "could not reach the engine. start it with `cd engine && ./run.sh`, or pick a bundled sample.",
-      },
-      { status: 503 },
-    );
+    const detail =
+      process.env.NODE_ENV === "production"
+        ? "uploads unavailable right now. bundled samples still work."
+        : "could not reach the engine. run `./dev.sh` from the hanga folder, or start the engine with `cd engine && ./run.sh`. bundled samples work without it.";
+    return NextResponse.json({ detail }, { status: 503 });
   }
 }

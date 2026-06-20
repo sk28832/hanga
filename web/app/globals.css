@@ -296,3 +296,79 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ===== fast motion tokens ===== */
+.motion-fast {
+  transition-duration: 250ms;
+  transition-timing-function: var(--ease-brush);
+}
+
+.motion-snap {
+  transition-duration: 350ms;
+  transition-timing-function: var(--ease-brush);
+}
+
+.motion-stage {
+  transition-duration: 400ms;
+  transition-timing-function: var(--ease-ink);
+}
+
+/* ===== workbench preview stage ===== */
+.workbench-stage {
+  contain: layout style;
+}
+
+/* ===== washi scrollbars ===== */
+.scroll-washi {
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) transparent;
+}
+
+.scroll-washi::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scroll-washi::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-washi::-webkit-scrollbar-thumb {
+  background: var(--stone);
+  border-radius: 3px;
+}
+
+.scroll-washi::-webkit-scrollbar-thumb:hover {
+  background: var(--brush-gray);
+}
+
+/* ===== custom range (washi track) ===== */
+.range-washi::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--washi);
+  border: 2px solid var(--umber);
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(26, 26, 26, 0.12);
+}
+
+.range-washi::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--washi);
+  border: 2px solid var(--umber);
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(26, 26, 26, 0.12);
+}
+
+.range-washi::-webkit-slider-runnable-track {
+  background: transparent;
+}
+
+.range-washi::-moz-range-track {
+  background: transparent;
+}

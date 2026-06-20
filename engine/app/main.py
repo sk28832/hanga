@@ -1,9 +1,4 @@
-"""fastapi surface for the engine.
-
-one real endpoint, POST /deconstruct: send an image, get back the full ukiyo-e
-production plan (keyblock, colour blocks, bokashi, sequence, registration) with
-every layer inlined as a png data-uri so the frontend needs no file plumbing.
-"""
+"""fastapi surface for the engine."""
 
 from __future__ import annotations
 

@@ -26,7 +26,7 @@ export function BlockStack({ plan, spread }: Props) {
   const maxZ = layers.length - 1;
 
   return (
-    <div className="relative w-full aspect-[4/3] max-h-[520px]">
+    <div className="relative w-full max-w-lg mx-auto aspect-[4/3] max-h-full">
       <div className="absolute inset-0 flex items-center justify-center perspective-[900px]">
         {layers.map((layer, i) => {
           const offset = (maxZ - i) * spread * 28;
@@ -34,7 +34,7 @@ export function BlockStack({ plan, spread }: Props) {
           return (
             <motion.div
               key={layer.id}
-              className="absolute inset-4 sm:inset-8 rounded-sm shadow-md overflow-hidden bg-washi"
+              className="absolute inset-2 sm:inset-4 rounded-sm shadow-md overflow-hidden bg-washi"
               style={{
                 zIndex: i,
                 transformStyle: "preserve-3d",
@@ -45,7 +45,7 @@ export function BlockStack({ plan, spread }: Props) {
                 rotateY: tilt,
                 opacity: 1 - (maxZ - i) * spread * 0.08,
               }}
-              transition={{ type: "spring", stiffness: 120, damping: 18 }}
+              transition={{ type: "spring", stiffness: 200, damping: 22 }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -60,9 +60,6 @@ export function BlockStack({ plan, spread }: Props) {
           );
         })}
       </div>
-      <p className="absolute -bottom-8 left-0 text-xs text-stone">
-        scrub to peel the blocks apart
-      </p>
     </div>
   );
 }

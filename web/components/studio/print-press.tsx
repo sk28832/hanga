@@ -1,8 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { DeconstructPlan } from "@/lib/types";
+import { RangeControl } from "@/components/studio/range-control";
 
 function playKaChunk() {
   try {
@@ -30,6 +31,7 @@ type Props = {
   onStepChange: (n: number) => void;
   playing: boolean;
   onPlayingChange: (v: boolean) => void;
+  compact?: boolean;
 };
 
 export function PrintPress({
@@ -38,6 +40,7 @@ export function PrintPress({
   onStepChange,
   playing,
   onPlayingChange,
+  compact,
 }: Props) {
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   const stepRef = useRef(step);
@@ -92,9 +95,14 @@ export function PrintPress({
   }, [playing, maxStep, onStepChange, stop]);
 
   return (
-    <div className="space-y-4">
-      <div className="relative w-full aspect-[4/3] max-h-[520px] rounded-sm overflow-hidden press-surface">
-        {/* paper base */}
+    <div className={compact ? "h-full flex flex-col min-h-0 gap-3" : "space-y-4"}>
+      <div
+        className={
+          compact
+            ? "relative flex-1 min-h-0 rounded-sm overflow-hidden press-surface"
+            : "relative w-full aspect-[4/3] max-h-[520px] rounded-sm overflow-hidden press-surface"
+        }
+      >
         <div
           className="absolute inset-0"
           style={{ backgroundColor: plan.base.hex }}
@@ -106,7 +114,7 @@ export function PrintPress({
               className="absolute inset-0"
               initial={{ opacity: 0, scale: 1.02, y: -6 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
+              transition={{ duration: 0.35, ease: [0.22, 0.61, 0.36, 1] }}
               style={{ zIndex: i + 1 }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -118,24 +126,20 @@ export function PrintPress({
             </motion.div>
           ))}
         </AnimatePresence>
-        {/* kento marks */}
         <div className="absolute top-[6%] right-[6%] w-3 h-3 border-r-2 border-b-2 border-ink/25 pointer-events-none" />
         <div className="absolute bottom-[3.5%] left-[30%] w-6 h-0.5 bg-ink/20 pointer-events-none" />
       </div>
 
-      <div className="flex flex-wrap items-center gap-4">
-        <input
-          type="range"
+      <div className="shrink-0 flex flex-wrap items-center gap-3">
+        <RangeControl
+          value={step}
           min={0}
           max={maxStep}
-          value={step}
-          onChange={(e) => onStepChange(Number(e.target.value))}
-          className="flex-1 min-w-[12rem] accent-umber"
+          onChange={onStepChange}
+          valueLabel={`impression ${step} / ${maxStep}`}
           aria-label="print progress"
+          className="flex-1 min-w-[10rem]"
         />
-        <span className="text-sm text-brush-gray font-serif tabular-nums">
-          impression {step} / {maxStep}
-        </span>
         <button
           type="button"
           onClick={() => {
@@ -147,7 +151,7 @@ export function PrintPress({
               playKaChunk();
             }
           }}
-          className="font-serif text-sm px-4 py-2 border border-stone/50 rounded-sm hover:border-umber hover:text-umber transition-colors"
+          className="font-serif text-sm px-4 py-2 border border-stone/50 rounded-sm hover:border-umber hover:text-umber transition-colors motion-fast shrink-0"
         >
           {playing ? "pause" : "print"}
         </button>
