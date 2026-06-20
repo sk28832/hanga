@@ -1,0 +1,13 @@
+# hanga
+web/node_modules/
+web/.next/
+web/out/
+engine/.venv/
+engine/__pycache__/
+engine/**/__pycache__/
+engine/**/*.pyc
+engine/cache/
+*.pyc
+.DS_Store
+.env
+.env.local

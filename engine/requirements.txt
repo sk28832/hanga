@@ -1,0 +1,16 @@
+# core api
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+
+# numerics + imaging (classical pipeline)
+numpy>=1.26
+pillow>=10.2
+scipy>=1.12
+scikit-image>=0.23
+scikit-learn>=1.4
+
+# modern path (optional, heavy) — install with: pip install -r requirements-modern.txt
+# torch
+# segment-anything
+# diffusers

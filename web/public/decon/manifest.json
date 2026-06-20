@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "edo-ohashi",
+    "title": "sudden shower over shin-\u014dhashi bridge and atake",
+    "series": "one hundred famous views of edo",
+    "year": "1857",
+    "thumb": "/decon/edo-ohashi/original.png",
+    "plan": "/decon/edo-ohashi/plan.json"
+  },
+  {
+    "slug": "edo-plum",
+    "title": "plum garden at kameido",
+    "series": "one hundred famous views of edo",
+    "year": "1857",
+    "thumb": "/decon/edo-plum/original.png",
+    "plan": "/decon/edo-plum/plan.json"
+  },
+  {
+    "slug": "tokaido-shono",
+    "title": "sh\u014dno, driving rain",
+    "series": "fifty-three stations of the t\u014dkaid\u014d",
+    "year": "c. 1833",
+    "thumb": "/decon/tokaido-shono/original.png",
+    "plan": "/decon/tokaido-shono/plan.json"
+  }
+]

@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Color Palette: Solarized Light + Sumi Ink + Earth =====
+   Source of truth: ../../tokens.css (workspace root). Keep in sync. */
+:root {
+  /* Base - Washi paper tones */
+  --washi: #fdf6e3;
+  --parchment: #eee8d5;
+  
+  /* Ink tones */
+  --ink: #1a1a1a;
+  --brush-gray: #3d3d3d;
+  --stone: #93a1a1;
+  
+  /* Earth accents */
+  --umber: #8b4513;
+  --sepia: #704214;
+  
+  /* Traditional vermillion for seal */
+  --vermillion: #c73e3a;
+  
+  /* Easing curves */
+  --ease-ink: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-brush: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-settle: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+    font-family: var(--font-shippori), Georgia, serif;
+    background-color: var(--washi);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* ===== Utility Classes ===== */
+.bg-washi { background-color: var(--washi); }
+.bg-parchment { background-color: var(--parchment); }
+.text-ink { color: var(--ink); }
+.text-brush-gray { color: var(--brush-gray); }
+.text-stone { color: var(--stone); }
+.text-umber { color: var(--umber); }
+.hover\:text-umber:hover { color: var(--umber); }
+
+/* ===== Typography ===== */
+.font-serif {
+  font-family: var(--font-shippori), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background-color: rgba(26, 26, 26, 0.12);
+}
+
+/* ===== Lightweight Washi Paper Texture ===== */
+/* Using a simple repeating gradient instead of expensive SVG filter */
+.paper-texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.08;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.02) 2px,
+      rgba(0,0,0,0.02) 4px
+    );
+}
+
+/* ===== OPTIMIZED ANIMATIONS (GPU-accelerated: transform + opacity only) ===== */
+
+@keyframes inkReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes inkRevealSubtle {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brushStroke {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes inkWashFade {
+  0% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: var(--wash-opacity, 0.12);
+    transform: scale(1);
+  }
+}
+
+@keyframes sealStamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.1) rotate(-2deg);
+  }
+  60% {
+    transform: scale(1.02) rotate(0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes socialReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes with GPU hints */
+.ink-reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: inkReveal 1.2s var(--ease-ink) forwards;
+}
+
+.ink-reveal-subtle {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: inkRevealSubtle 1s var(--ease-ink) forwards;
+}
+
+.brush-stroke-reveal {
+  opacity: 0;
+  transform-origin: left center;
+  will-change: transform, opacity;
+  animation: brushStroke 0.8s var(--ease-brush) forwards;
+}
+
+.ink-wash-reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: inkWashFade 2s var(--ease-settle) forwards;
+}
+
+.seal-reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: sealStamp 0.8s var(--ease-settle) forwards;
+}
+
+.social-reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: socialReveal 0.8s var(--ease-ink) forwards;
+}
+
+/* Tighter staggered delays */
+.delay-0 { animation-delay: 0.05s; }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.55s; }
+.delay-4 { animation-delay: 0.75s; }
+.delay-5 { animation-delay: 0.95s; }
+.delay-6 { animation-delay: 1.1s; }
+.delay-7 { animation-delay: 1.25s; }
+
+.delay-late { animation-delay: 1s; }
+.delay-very-late { animation-delay: 1.4s; }
+
+/* ===== Link Styles ===== */
+.link-brush {
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link-brush::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--brush-gray) 10%,
+    var(--ink) 30%,
+    var(--ink) 70%,
+    var(--brush-gray) 90%,
+    transparent 100%
+  );
+  opacity: 0.4;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.link-brush:hover {
+  color: var(--umber);
+}
+
+.link-brush:hover::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--sepia) 10%,
+    var(--umber) 30%,
+    var(--umber) 70%,
+    var(--sepia) 90%,
+    transparent 100%
+  );
+  opacity: 0.7;
+}
+
+/* ===== Social Icons ===== */
+.social-icon {
+  color: var(--stone);
+  padding: 0.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--ink);
+  transform: scale(1.1);
+}
+
+/* ===== Seal Hover ===== */
+.seal-hover {
+  transition: transform 0.3s ease;
+}
+
+.seal-hover:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Focus States ===== */
+:focus-visible {
+  outline: 2px solid var(--umber);
+  outline-offset: 4px;
+}
+
+/* ===== press surface — subtle paper grain under the simulated print ===== */
+.press-surface {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.015) 3px,
+      rgba(0, 0, 0, 0.015) 4px
+    );
+  box-shadow: inset 0 0 40px rgba(26, 26, 26, 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

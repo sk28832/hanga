@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "width": 900,
+    "height": 600,
+    "n_blocks": 8,
+    "engine_version": "0.1.0",
+    "used_sam": false
+  },
+  "base": {
+    "hex": "#e4af95",
+    "pigment": {
+      "romaji": "gofun",
+      "kanji": "\u80e1\u7c89",
+      "english": "shell white",
+      "note": "ground oyster-shell white. also the bare paper showing through."
+    }
+  },
+  "keyblock": {
+    "sequence": 1,
+    "role": "keyblock",
+    "name": "sumiban",
+    "pigment": {
+      "romaji": "sumi",
+      "kanji": "\u58a8",
+      "english": "lampblack ink",
+      "note": "the keyblock ink. soot and animal glue; the outline of the world."
+    },
+    "image": "/decon/edo-plum/keyblock.png"
+  },
+  "kento": {
+    "kagi": {
+      "x": 0.94,
+      "y": 0.94,
+      "note": "L-shaped corner mark (\u9264)"
+    },
+    "hikitsuke": {
+      "x": 0.3,
+      "y": 0.965,
+      "note": "straight guide mark (\u5f15\u4ed8)"
+    },
+    "explanation": "the sheet drops into these two marks on every pull.",
+    "order": [
+      1,
+      8,
+      5,
+      4,
+      0,
+      7,
+      3,
+      6
+    ]
+  },
+  "original": "/decon/edo-plum/original.png",
+  "final": "/decon/edo-plum/final.png",
+  "blocks": [
+    {
+      "id": 1,
+      "sequence": 2,
+      "role": "field",
+      "hex": "#e1a48a",
+      "rgb": [
+        0.8826,
+        0.6415,
+        0.5417
+      ],
+      "area_fraction": 0.151,
+      "pigment": {
+        "romaji": "nezumi",
+        "kanji": "\u9f20",
+        "english": "mouse grey",
+        "note": "literally 'mouse' \u2014 the neutral grey of stone and dusk."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        0
+      ],
+      "centroid": [
+        0.5127,
+        0.3472
+      ],
+      "image": "/decon/edo-plum/layer_02.png"
+    },
+    {
+      "id": 8,
+      "sequence": 3,
+      "role": "field",
+      "hex": "#dd997f",
+      "rgb": [
+        0.867,
+        0.5995,
+        0.4998
+      ],
+      "area_fraction": 0.1404,
+      "pigment": {
+        "romaji": "taisha",
+        "kanji": "\u4ee3\u8d6d",
+        "english": "red ochre",
+        "note": "iron-earth brown-red for soil, tree trunks, rooftiles."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        -1,
+        -1
+      ],
+      "centroid": [
+        0.5037,
+        0.1945
+      ],
+      "image": "/decon/edo-plum/layer_03.png"
+    },
+    {
+      "id": 5,
+      "sequence": 4,
+      "role": "field",
+      "hex": "#da9076",
+      "rgb": [
+        0.8536,
+        0.5638,
+        0.4646
+      ],
+      "area_fraction": 0.1244,
+      "pigment": {
+        "romaji": "taisha",
+        "kanji": "\u4ee3\u8d6d",
+        "english": "red ochre",
+        "note": "iron-earth brown-red for soil, tree trunks, rooftiles."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        1,
+        0
+      ],
+      "centroid": [
+        0.4928,
+        0.0655
+      ],
+      "image": "/decon/edo-plum/layer_04.png"
+    },
+    {
+      "id": 4,
+      "sequence": 5,
+      "role": "field",
+      "hex": "#608451",
+      "rgb": [
+        0.3763,
+        0.5168,
+        0.3173
+      ],
+      "area_fraction": 0.3627,
+      "pigment": {
+        "romaji": "midori",
+        "kanji": "\u7dd1",
+        "english": "green",
+        "note": "not a single pigment \u2014 printed by overlaying blue and yellow blocks."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        0
+      ],
+      "centroid": [
+        0.529,
+        0.7975
+      ],
+      "image": "/decon/edo-plum/layer_05.png"
+    },
+    {
+      "id": 0,
+      "sequence": 6,
+      "role": "detail",
+      "hex": "#5c7449",
+      "rgb": [
+        0.3604,
+        0.454,
+        0.2869
+      ],
+      "area_fraction": 0.0165,
+      "pigment": {
+        "romaji": "midori",
+        "kanji": "\u7dd1",
+        "english": "green",
+        "note": "not a single pigment \u2014 printed by overlaying blue and yellow blocks."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        1,
+        -1
+      ],
+      "centroid": [
+        0.2774,
+        0.8547
+      ],
+      "image": "/decon/edo-plum/layer_06.png"
+    },
+    {
+      "id": 7,
+      "sequence": 7,
+      "role": "detail",
+      "hex": "#8f5d4b",
+      "rgb": [
+        0.5594,
+        0.365,
+        0.2947
+      ],
+      "area_fraction": 0.0035,
+      "pigment": {
+        "romaji": "cha",
+        "kanji": "\u8336",
+        "english": "tea brown",
+        "note": "warm brown for timber and earth."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        -1
+      ],
+      "centroid": [
+        0.1265,
+        0.7863
+      ],
+      "image": "/decon/edo-plum/layer_07.png"
+    },
+    {
+      "id": 3,
+      "sequence": 8,
+      "role": "color",
+      "hex": "#b44249",
+      "rgb": [
+        0.7057,
+        0.2574,
+        0.2851
+      ],
+      "area_fraction": 0.0301,
+      "pigment": {
+        "romaji": "beni",
+        "kanji": "\u7d05",
+        "english": "safflower red",
+        "note": "safflower pink-red. fugitive \u2014 it fades, so survivors look pinker than printed."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        1
+      ],
+      "centroid": [
+        0.1707,
+        0.5677
+      ],
+      "image": "/decon/edo-plum/layer_08.png"
+    },
+    {
+      "id": 6,
+      "sequence": 9,
+      "role": "sumi-field",
+      "hex": "#2e3729",
+      "rgb": [
+        0.179,
+        0.2156,
+        0.1604
+      ],
+      "area_fraction": 0.0076,
+      "pigment": {
+        "romaji": "sumi",
+        "kanji": "\u58a8",
+        "english": "lampblack ink",
+        "note": "the keyblock ink. soot and animal glue; the outline of the world."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        -1
+      ],
+      "centroid": [
+        0.4733,
+        0.5419
+      ],
+      "image": "/decon/edo-plum/layer_09.png"
+    }
+  ],
+  "sample": {
+    "slug": "edo-plum",
+    "title": "plum garden at kameido",
+    "series": "one hundred famous views of edo",
+    "year": "1857",
+    "note": "a blossoming branch thrust across the foreground; flat green ground, red bokashi sky behind."
+  }
+}

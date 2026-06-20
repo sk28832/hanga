@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "width": 900,
+    "height": 600,
+    "n_blocks": 8,
+    "engine_version": "0.1.0",
+    "used_sam": false
+  },
+  "base": {
+    "hex": "#e5dcc6",
+    "pigment": {
+      "romaji": "gofun",
+      "kanji": "\u80e1\u7c89",
+      "english": "shell white",
+      "note": "ground oyster-shell white. also the bare paper showing through."
+    }
+  },
+  "keyblock": {
+    "sequence": 1,
+    "role": "keyblock",
+    "name": "sumiban",
+    "pigment": {
+      "romaji": "sumi",
+      "kanji": "\u58a8",
+      "english": "lampblack ink",
+      "note": "the keyblock ink. soot and animal glue; the outline of the world."
+    },
+    "image": "/decon/edo-ohashi/keyblock.png"
+  },
+  "kento": {
+    "kagi": {
+      "x": 0.94,
+      "y": 0.94,
+      "note": "L-shaped corner mark (\u9264)"
+    },
+    "hikitsuke": {
+      "x": 0.3,
+      "y": 0.965,
+      "note": "straight guide mark (\u5f15\u4ed8)"
+    },
+    "explanation": "the sheet drops into these two marks on every pull.",
+    "order": [
+      6,
+      4,
+      8,
+      2,
+      1,
+      3,
+      7,
+      5
+    ]
+  },
+  "original": "/decon/edo-ohashi/original.png",
+  "final": "/decon/edo-ohashi/final.png",
+  "blocks": [
+    {
+      "id": 6,
+      "sequence": 2,
+      "role": "color",
+      "hex": "#dad5c4",
+      "rgb": [
+        0.8563,
+        0.8346,
+        0.768
+      ],
+      "area_fraction": 0.1166,
+      "pigment": {
+        "romaji": "gofun",
+        "kanji": "\u80e1\u7c89",
+        "english": "shell white",
+        "note": "ground oyster-shell white. also the bare paper showing through."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        0
+      ],
+      "centroid": [
+        0.4994,
+        0.1642
+      ],
+      "image": "/decon/edo-ohashi/layer_02.png"
+    },
+    {
+      "id": 4,
+      "sequence": 3,
+      "role": "color",
+      "hex": "#cfcdc2",
+      "rgb": [
+        0.8134,
+        0.8046,
+        0.7611
+      ],
+      "area_fraction": 0.1133,
+      "pigment": {
+        "romaji": "gofun",
+        "kanji": "\u80e1\u7c89",
+        "english": "shell white",
+        "note": "ground oyster-shell white. also the bare paper showing through."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        -1,
+        -1
+      ],
+      "centroid": [
+        0.4994,
+        0.2791
+      ],
+      "image": "/decon/edo-ohashi/layer_03.png"
+    },
+    {
+      "id": 8,
+      "sequence": 4,
+      "role": "color",
+      "hex": "#c5c6c0",
+      "rgb": [
+        0.7736,
+        0.7765,
+        0.7547
+      ],
+      "area_fraction": 0.1017,
+      "pigment": {
+        "romaji": "gofun",
+        "kanji": "\u80e1\u7c89",
+        "english": "shell white",
+        "note": "ground oyster-shell white. also the bare paper showing through."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        1,
+        0
+      ],
+      "centroid": [
+        0.4995,
+        0.3866
+      ],
+      "image": "/decon/edo-ohashi/layer_04.png"
+    },
+    {
+      "id": 2,
+      "sequence": 5,
+      "role": "color",
+      "hex": "#bbbfbf",
+      "rgb": [
+        0.734,
+        0.7482,
+        0.7471
+      ],
+      "area_fraction": 0.1006,
+      "pigment": {
+        "romaji": "gofun",
+        "kanji": "\u80e1\u7c89",
+        "english": "shell white",
+        "note": "ground oyster-shell white. also the bare paper showing through."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        0
+      ],
+      "centroid": [
+        0.4995,
+        0.4882
+      ],
+      "image": "/decon/edo-ohashi/layer_05.png"
+    },
+    {
+      "id": 1,
+      "sequence": 6,
+      "role": "field",
+      "hex": "#28374b",
+      "rgb": [
+        0.1564,
+        0.215,
+        0.2934
+      ],
+      "area_fraction": 0.3448,
+      "pigment": {
+        "romaji": "ai",
+        "kanji": "\u85cd",
+        "english": "indigo",
+        "note": "fermented indigo. the older, softer blue bero-ai slowly displaced."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        1,
+        -1
+      ],
+      "centroid": [
+        0.5016,
+        0.7695
+      ],
+      "image": "/decon/edo-ohashi/layer_06.png"
+    },
+    {
+      "id": 3,
+      "sequence": 7,
+      "role": "color",
+      "hex": "#162856",
+      "rgb": [
+        0.0871,
+        0.1559,
+        0.3392
+      ],
+      "area_fraction": 0.0853,
+      "pigment": {
+        "romaji": "bero-ai",
+        "kanji": "\u30d9\u30ed\u85cd",
+        "english": "prussian blue",
+        "note": "imported synthetic blue. hiroshige's signature skies and water after the 1830s."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        -1
+      ],
+      "centroid": [
+        0.4977,
+        0.7703
+      ],
+      "image": "/decon/edo-ohashi/layer_07.png"
+    },
+    {
+      "id": 7,
+      "sequence": 8,
+      "role": "detail",
+      "hex": "#192748",
+      "rgb": [
+        0.0964,
+        0.1523,
+        0.2835
+      ],
+      "area_fraction": 0.0182,
+      "pigment": {
+        "romaji": "bero-ai",
+        "kanji": "\u30d9\u30ed\u85cd",
+        "english": "prussian blue",
+        "note": "imported synthetic blue. hiroshige's signature skies and water after the 1830s."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        1
+      ],
+      "centroid": [
+        0.4668,
+        0.7885
+      ],
+      "image": "/decon/edo-ohashi/layer_08.png"
+    },
+    {
+      "id": 5,
+      "sequence": 9,
+      "role": "sumi-field",
+      "hex": "#1c2531",
+      "rgb": [
+        0.1112,
+        0.1452,
+        0.1922
+      ],
+      "area_fraction": 0.0128,
+      "pigment": {
+        "romaji": "sumi",
+        "kanji": "\u58a8",
+        "english": "lampblack ink",
+        "note": "the keyblock ink. soot and animal glue; the outline of the world."
+      },
+      "bokashi": null,
+      "registration_offset": [
+        0,
+        -1
+      ],
+      "centroid": [
+        0.4994,
+        0.7008
+      ],
+      "image": "/decon/edo-ohashi/layer_09.png"
+    }
+  ],
+  "sample": {
+    "slug": "edo-ohashi",
+    "title": "sudden shower over shin-\u014dhashi bridge and atake",
+    "series": "one hundred famous views of edo",
+    "year": "1857",
+    "note": "the print van gogh copied. grey bokashi sky, bero-ai river, and again rain as ruled keyblock lines."
+  }
+}

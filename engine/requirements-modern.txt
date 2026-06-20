@@ -1,0 +1,12 @@
+# optional modern-ml path. requires a machine with enough memory (and ideally a gpu).
+# the classical pipeline runs without any of these; they only sharpen the results.
+-r requirements.txt
+
+torch>=2.2
+torchvision>=0.17
+segment-anything>=1.0
+
+# optional diffusion re-synthesis / clean-block inpaint (very heavy, off by default)
+# diffusers>=0.27
+# transformers>=4.40
+# accelerate>=0.29
